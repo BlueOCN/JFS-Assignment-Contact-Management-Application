@@ -35,6 +35,35 @@ public class ContactDirectory {
         }
     }
 
+    public Contact findContactByName(String contactName) {
+        if (!this.contactMap.containsKey(contactName)) {
+            throw new IllegalArgumentException("Contact does not exist.");
+        }
+        else {
+            return this.contactMap.get(contactName);
+        }
+    }
+
+    public void displayContact(Contact contact) {
+        System.out.println("-".repeat(165));
+        System.out.printf("|  \u001B[1m%s\u001B[0m%-147s|%n",contact.getName(), "");
+        System.out.println("-".repeat(165));
+        System.out.printf("| %-45s| %-46s| %-62s| %-35s|\n",
+                "\033[1m" + "Id" + "\033[0m",
+                "\033[1m" + "Phone" + "\033[0m",
+                "\033[1m" + "Email" + "\033[0m",
+                "\033[1m" + "Type" + "\033[0m");
+
+        // Print table rows
+        System.out.printf("| %-37s| %-38s| %-54s| %-27s|\n",
+                contact.getContactId(),
+                contact.getPhoneNumber(),
+                contact.getEmail(),
+                contact.getContactType());
+        System.out.println("-".repeat(165));
+    }
+
+
 
     public void addContactType(String newContactType) {
         // Sets do not take duplicates
@@ -96,8 +125,6 @@ public class ContactDirectory {
     // Provide functionality to sort the contact list by name.
     public void sortContactsByName() {}
 
-    // Implement methods to search for a contact by name and retrieve their details.
-    public Contact getContactByName(String contactName) { return null; }
     // Allow users to update contact information using the contact name.
     public void updateContactByName(String contactName, HashMap<String, String> contactInformation) {}
 

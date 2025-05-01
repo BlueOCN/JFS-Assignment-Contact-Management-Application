@@ -23,8 +23,8 @@ public class ContactManager {
         contactDirectory.displayContactTypes();
 
         // Searching for contacts by name and displaying their information.
-        Contact contact = findContactByName("Diego Martínez");
-        displayContact(contact);
+        Contact contact = contactDirectory.findContactByName("Diego Martínez");
+        contactDirectory.displayContact(contact);
 
         // Updating a contact’s details and displaying the updated list.
         HashMap<String, String> details = new HashMap<>();
@@ -43,10 +43,6 @@ public class ContactManager {
 //    public void deleteContact(Contact contact) {}
 //    public void addContacts(ArrayList<Contact> contacts) {}
 //    public void deleteContacts(ArrayList<Contact> contacts) {}
-
-    // Search for a contact by name and display their details
-    public static Contact findContactByName(String name) {return null;}
-    public static void displayContact(Contact contact) {}
 
     // Update contact information and manage the contact list.
     public static void updateContact(Contact contact, HashMap<String, String> contactInformation) {}
