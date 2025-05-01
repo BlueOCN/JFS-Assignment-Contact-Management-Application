@@ -1,24 +1,43 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
-/*
-Write a main class ContactManager with a main method to demonstrate
-the functionality of your contact management application.
-
-Implement methods to:
-
-- Add new contacts to the directory.
-- Register and display unique contact types.
-- Search for a contact by name and display their details.
-- Update contact information and manage the contact list.
-- Sort and display the list of contacts alphabetically.
- */
 public class ContactManager {
     public static void main(String[] args) {
-        // Main
+
+        ContactDirectory contactDirectory = new ContactDirectory();
+
+        Contact contact1 = new Contact("Diego Martínez", "+52 55-1234-5678", "jason.fernandez82@email.com", "Personal");
+        Contact contact2 = new Contact("Sofia González", "+52 81-9876-5432", "maria.gomez47@inbox.net", "Personal");
+        Contact contact3 = new Contact("Javier Herrera", "+52 33-4567-8901", "alex.roberts123@fastmail.org", "Professional");
+        Contact contact4 = new Contact("Laura Fernández", "+52 442-2345-6789", "samantha.lane78@webmail.co", "Professional");
+
+        // Adding new contacts and displaying them.
+        addContact(contact1);
+
+        // Preventing duplicate contact types from being added.
+        Contact contact1Duplicate = new Contact("Diego Martínez", "+52 55-1234-5678", "jason.fernandez82@email.com", "Personal");
+        addContact(contact1Duplicate);
+
+        // Searching for contacts by name and displaying their information.
+        Contact contact = findContactByName("Diego Martínez");
+        displayContact(contact);
+
+        // Updating a contact’s details and displaying the updated list.
+        HashMap<String, String> details = new HashMap<>();
+        details.put("name","Armando Martinez");
+        details.put("phoneNumber","+52 55-1234-5673");
+        details.put("email","armando.martinez@email.com");
+        details.put("contactType","Professional");
+        updateContact(contact1, details);
+        displayContacts();
+
+        // Sorting the list of contacts by name and displaying them in order.
+        sortContacts();
+        displayContacts();
     }
 
     // Add new contacts to the directory
-    public void addContact(Contact contact) {}
+    public static void addContact(Contact contact) {}
     public void deleteContact(Contact contact) {}
     public void addContacts(ArrayList<Contact> contacts) {}
     public void deleteContacts(ArrayList<Contact> contacts) {}
@@ -26,13 +45,13 @@ public class ContactManager {
     // Register and display unique contact types
 
     // Search for a contact by name and display their details
-    public void findContactByName(String name) {}
-    public void displayContact(Contact contact) {}
+    public static Contact findContactByName(String name) {return null;}
+    public static void displayContact(Contact contact) {}
 
     // Update contact information and manage the contact list.
-    public void updateContact(Contact contact) {}
+    public static void updateContact(Contact contact, HashMap<String, String> contactInformation) {}
 
     // Sort and display the list of contacts alphabetically
-    public void sortContacts(ArrayList<Contact> contacts) {}
-    public void displayContacts(ArrayList<Contact> contacts) {}
+    public static void sortContacts() {}
+    public static void displayContacts() {}
 }

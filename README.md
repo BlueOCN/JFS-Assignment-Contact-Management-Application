@@ -31,7 +31,7 @@ Design a contact management application for storing and managing personal and pr
 
 - Use a HashSet to maintain a list of unique contact types (e.g., “Personal” or “Professional”).
 - Implement methods to add new contact types and display the list of unique types.
--Demonstrate how sets can help avoid duplicate entries.
+- Demonstrate how sets can help avoid duplicate entries.
 
 ### Map Implementation:
 
