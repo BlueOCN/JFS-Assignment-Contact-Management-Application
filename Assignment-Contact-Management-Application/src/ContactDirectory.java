@@ -24,16 +24,47 @@ public class ContactDirectory {
 
     // Add new contacts to the directory
     public void addContact(Contact contact) {
-        if (contactMap.containsKey(contact.getName())) {
+        if (this.contactMap.containsKey(contact.getName())) {
             throw new IllegalArgumentException("Name is already taken.");
         }
         else {
             // Add contact to the contact Map
-            contactMap.put(contact.getName(), contact);
+            this.contactMap.put(contact.getName(), contact);
             // Add contact to the contact List
             this.contactList.add(contact);
         }
     }
+
+
+    public void addContactType(String newContactType) {
+        // Sets do not take duplicates
+        this.contactTypesSet.add(newContactType);
+
+//        if (this.contactTypesSet.contains(newContactType)) {
+//            throw new IllegalArgumentException("Type is already defined.");
+//        }
+//        else {
+//            // Add contact type to the set
+//            this.contactTypesSet.add(newContactType);
+//        }
+    }
+
+    public void displayContactTypes() {
+
+        System.out.println("-".repeat(165));
+        System.out.printf("|  \u001B[1mAll Contact Types\u001B[0m%-144s|%n", "");
+        System.out.println("-".repeat(165));
+        System.out.printf("| %-170s|\n",
+                "\033[1m" + "Type" + "\033[0m");
+
+        // Print table rows
+        for (String type : this.contactTypesSet) {
+            System.out.printf("| %-162s|\n",
+                    type);
+        }
+        System.out.println("-".repeat(165));
+    }
+
 
     public void displayContacts() {
         System.out.println("-".repeat(165));
@@ -64,11 +95,6 @@ public class ContactDirectory {
 
     // Provide functionality to sort the contact list by name.
     public void sortContactsByName() {}
-
-    // Implement methods to add new contact types and display the list of unique types.
-    // Demonstrate how sets can help avoid duplicate entries.
-    public void addContactType(String contactType) {}
-    public void displayContactTypes() {}
 
     // Implement methods to search for a contact by name and retrieve their details.
     public Contact getContactByName(String contactName) { return null; }

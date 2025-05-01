@@ -18,9 +18,9 @@ public class ContactManager {
         contactDirectory.displayContacts();
 
         // Preventing duplicate contact types from being added.
-        addContactType("Personal");
-        addContactType("Favourite");
-        displayContactTypes();
+        contactDirectory.addContactType("Personal");
+        contactDirectory.addContactType("Favourite");
+        contactDirectory.displayContactTypes();
 
         // Searching for contacts by name and displaying their information.
         Contact contact = findContactByName("Diego Martínez");
@@ -43,10 +43,6 @@ public class ContactManager {
 //    public void deleteContact(Contact contact) {}
 //    public void addContacts(ArrayList<Contact> contacts) {}
 //    public void deleteContacts(ArrayList<Contact> contacts) {}
-
-    // Register and display unique contact types
-    public static void addContactType(String newContactType) {}
-    public static void displayContactTypes() {}
 
     // Search for a contact by name and display their details
     public static Contact findContactByName(String name) {return null;}
