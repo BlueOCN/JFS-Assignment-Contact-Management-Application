@@ -11,10 +11,11 @@ public class ContactManager {
         Contact contact4 = new Contact("Laura Fernández", "+52 442-2345-6789", "samantha.lane78@webmail.co", "Professional");
 
         // Adding new contacts and displaying them.
-        addContact(contact1);
-        addContact(contact2);
-        addContact(contact3);
-        addContact(contact4);
+        contactDirectory.addContact(contact1);
+        contactDirectory.addContact(contact2);
+        contactDirectory.addContact(contact3);
+        contactDirectory.addContact(contact4);
+        contactDirectory.displayContacts();
 
         // Preventing duplicate contact types from being added.
         addContactType("Personal");
@@ -32,15 +33,13 @@ public class ContactManager {
         details.put("email","armando.martinez@email.com");
         details.put("contactType","Professional");
         updateContact(contact1, details);
-        displayContacts();
+        contactDirectory.displayContacts();
 
         // Sorting the list of contacts by name and displaying them in order.
         sortContacts();
-        displayContacts();
+        contactDirectory.displayContacts();
     }
 
-    // Add new contacts to the directory
-    public static void addContact(Contact contact) {}
 //    public void deleteContact(Contact contact) {}
 //    public void addContacts(ArrayList<Contact> contacts) {}
 //    public void deleteContacts(ArrayList<Contact> contacts) {}
@@ -58,5 +57,4 @@ public class ContactManager {
 
     // Sort and display the list of contacts alphabetically
     public static void sortContacts() {}
-    public static void displayContacts() {}
 }
