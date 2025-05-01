@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ContactManager {
@@ -13,10 +12,14 @@ public class ContactManager {
 
         // Adding new contacts and displaying them.
         addContact(contact1);
+        addContact(contact2);
+        addContact(contact3);
+        addContact(contact4);
 
         // Preventing duplicate contact types from being added.
-        Contact contact1Duplicate = new Contact("Diego Martínez", "+52 55-1234-5678", "jason.fernandez82@email.com", "Personal");
-        addContact(contact1Duplicate);
+        addContactType("Personal");
+        addContactType("Favourite");
+        displayContactTypes();
 
         // Searching for contacts by name and displaying their information.
         Contact contact = findContactByName("Diego Martínez");
@@ -38,11 +41,13 @@ public class ContactManager {
 
     // Add new contacts to the directory
     public static void addContact(Contact contact) {}
-    public void deleteContact(Contact contact) {}
-    public void addContacts(ArrayList<Contact> contacts) {}
-    public void deleteContacts(ArrayList<Contact> contacts) {}
+//    public void deleteContact(Contact contact) {}
+//    public void addContacts(ArrayList<Contact> contacts) {}
+//    public void deleteContacts(ArrayList<Contact> contacts) {}
 
     // Register and display unique contact types
+    public static void addContactType(String newContactType) {}
+    public static void displayContactTypes() {}
 
     // Search for a contact by name and display their details
     public static Contact findContactByName(String name) {return null;}
