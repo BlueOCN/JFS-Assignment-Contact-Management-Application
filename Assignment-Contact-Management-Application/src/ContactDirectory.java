@@ -44,6 +44,20 @@ public class ContactDirectory {
         }
     }
 
+    public void updateContactByName(String contactName, HashMap<String, String> contactInformation) {
+        Contact contact = findContactByName(contactName);
+        Contact updatedContact = new Contact(contactInformation.get("name"), contactInformation.get("phoneNumber"), contactInformation.get("email"), contactInformation.get("contactType"));
+
+        contactMap.replace(contactName, updatedContact);
+        this.contactList.remove(contact);
+        this.contactList.add(updatedContact);
+    }
+
+
+    public void sortContacts() {}
+
+
+
     public void displayContact(Contact contact) {
         System.out.println("-".repeat(165));
         System.out.printf("|  \u001B[1m%s\u001B[0m%-147s|%n",contact.getName(), "");
@@ -118,14 +132,7 @@ public class ContactDirectory {
         System.out.println("-".repeat(165));
     }
 
-
-
-    public void updateContact(Contact contact) {}
-
     // Provide functionality to sort the contact list by name.
     public void sortContactsByName() {}
-
-    // Allow users to update contact information using the contact name.
-    public void updateContactByName(String contactName, HashMap<String, String> contactInformation) {}
 
 }

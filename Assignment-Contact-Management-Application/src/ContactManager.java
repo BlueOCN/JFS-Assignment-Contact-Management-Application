@@ -32,11 +32,11 @@ public class ContactManager {
         details.put("phoneNumber","+52 55-1234-5673");
         details.put("email","armando.martinez@email.com");
         details.put("contactType","Professional");
-        updateContact(contact1, details);
+        contactDirectory.updateContactByName("Diego Martínez", details);
         contactDirectory.displayContacts();
 
         // Sorting the list of contacts by name and displaying them in order.
-        sortContacts();
+        contactDirectory.sortContacts();
         contactDirectory.displayContacts();
     }
 
@@ -44,9 +44,4 @@ public class ContactManager {
 //    public void addContacts(ArrayList<Contact> contacts) {}
 //    public void deleteContacts(ArrayList<Contact> contacts) {}
 
-    // Update contact information and manage the contact list.
-    public static void updateContact(Contact contact, HashMap<String, String> contactInformation) {}
-
-    // Sort and display the list of contacts alphabetically
-    public static void sortContacts() {}
 }
