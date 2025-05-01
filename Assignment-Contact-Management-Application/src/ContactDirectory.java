@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-
+import java.util.*;
 
 public class ContactDirectory {
 
@@ -54,7 +51,9 @@ public class ContactDirectory {
     }
 
 
-    public void sortContacts() {}
+    public void sortContactsByName() {
+        this.contactList.sort(Comparator.comparing(Contact::getName));
+    }
 
 
 
@@ -82,14 +81,6 @@ public class ContactDirectory {
     public void addContactType(String newContactType) {
         // Sets do not take duplicates
         this.contactTypesSet.add(newContactType);
-
-//        if (this.contactTypesSet.contains(newContactType)) {
-//            throw new IllegalArgumentException("Type is already defined.");
-//        }
-//        else {
-//            // Add contact type to the set
-//            this.contactTypesSet.add(newContactType);
-//        }
     }
 
     public void displayContactTypes() {
@@ -131,8 +122,5 @@ public class ContactDirectory {
         }
         System.out.println("-".repeat(165));
     }
-
-    // Provide functionality to sort the contact list by name.
-    public void sortContactsByName() {}
 
 }

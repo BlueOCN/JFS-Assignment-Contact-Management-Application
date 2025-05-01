@@ -36,12 +36,8 @@ public class ContactManager {
         contactDirectory.displayContacts();
 
         // Sorting the list of contacts by name and displaying them in order.
-        contactDirectory.sortContacts();
+        contactDirectory.sortContactsByName();
         contactDirectory.displayContacts();
     }
-
-//    public void deleteContact(Contact contact) {}
-//    public void addContacts(ArrayList<Contact> contacts) {}
-//    public void deleteContacts(ArrayList<Contact> contacts) {}
 
 }
